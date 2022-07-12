@@ -1,5 +1,12 @@
 <template>
-    <div class="main-container">
-        this is the main container
-    </div>
+    <AsideSection />
 </template>
+<script>
+import AsideSection from "./AsideSection.vue"
+
+export default {
+    components:{
+        AsideSection
+    }
+}
+</script>
