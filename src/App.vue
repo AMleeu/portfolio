@@ -1,13 +1,17 @@
 <template>
   <div id="app">
-    clean slate
+    <MainContainer/>
   </div>
 </template>
 
 <script>
+import MainContainer from "./components/MainContent.vue"
 
 export default {
   name: 'App',
+  components:{
+    MainContainer,
+  }
 }
 </script>
 
