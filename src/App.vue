@@ -22,6 +22,7 @@ export default {
     --bg-black-50: #e8dfec;
     --text-black-900: #302e4d;
     --text-black-700: #504e70;
+    --text-margin-top:0.35em;
 }
 *{
     margin:0px;

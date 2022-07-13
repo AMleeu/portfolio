@@ -4,13 +4,48 @@
       <a href="#"><span>A</span>lbert</a>
     </div>
     <div class="nav">
-      <li><a href="">Home</a></li>
-      <li><a href="">What i Do</a></li>
-      <li><a href="">My Projects</a></li>
-      <li><a href="">Get in Touch</a></li>
+      <li>
+        <a href="">
+          <font-awesome-icon icon="fa-solid fa-home-alt" />
+          &nbsp; home
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <font-awesome-icon icon="fa-solid fa-user-gear" /> &nbsp; my services
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <font-awesome-icon icon="fa-solid fa-box-open" /> &nbsp; my projects
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <font-awesome-icon icon="fa-solid fa-phone-square-alt" /> &nbsp; Get
+          in Touch
+        </a>
+      </li>
     </div>
   </div>
 </template>
+
+<script>
+/*
+  set up font-awesom and import required modules
+*/
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faHomeAlt,
+  faUserGear,
+  faPhoneSquareAlt,
+  faBoxOpen,
+} from "@fortawesome/free-solid-svg-icons";
+
+library.add(faHomeAlt, faUserGear, faPhoneSquareAlt, faBoxOpen);
+
+export default {};
+</script>
 
 <style>
 #aside-section {
@@ -22,5 +57,9 @@
   left: 0;
   height: 100%;
   z-index: 10;
+}
+#aside-section li {
+  list-style: none;
+  margin-top: var(--text-margin-top);
 }
 </style>
