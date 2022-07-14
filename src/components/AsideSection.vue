@@ -115,7 +115,7 @@ nav-toggler
   border: 1px solid var(--bg-black-50);
   cursor:pointer;
   position:fixed; 
-  left:300px;
+  left:20px;
   top: 20px;
   border-radius: 5px;
   background: var(--bg-black-100);

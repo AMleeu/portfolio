@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import avatarUrl from "../assets/avatar.jpg";
+import avatarUrl from "../assets/img/avatar.jpg";
 
 export default {
   data() {
@@ -70,6 +70,14 @@ section.home{
     text-align:center;
     padding: var(--padd-x-15);
 }
+.home-img::before{
+    content:'';
+    position:absolute;
+    top:-40px;
+    height: 80px;
+    width:80px;
+    border-top: 10px solid var(--primary);
+}
 .home-img::after{
     content:'';
     position:absolute;
@@ -79,14 +87,6 @@ section.home{
     width:80px;
     border-bottom: 10px solid var(--primary);
     border-right: 10px solid var(--primary);
-}
-.home-img::before{
-    content:'';
-    position:absolute;
-    top:-40px;
-    height: 80px;
-    width:80px;
-    border-top: 10px solid var(--primary);
 }
 .home-img .avatar {
   height: 400px;

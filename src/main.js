@@ -1,6 +1,7 @@
 import Vue from "vue";
 import App from "./App.vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import "./assets/css/responsive.css";
 
 /*
   register the Font Awesome icon component

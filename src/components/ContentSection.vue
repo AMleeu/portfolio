@@ -51,7 +51,6 @@ section .content-container .row{
   display:flex;
   flex-wrap: wrap;
   margin-left: 15px;
-  margin-left: -15px;
   position:relative;
 }
 /*
