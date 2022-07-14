@@ -24,6 +24,8 @@ export default {
   --text-black-900: #302e4d;
   --text-black-700: #504e70;
   --text-margin-top: 20px;
+  --padd-x-15:0 15px 0 15px;
+  --margin-y-15:15px 0 15px 0;
   --primary: #ec1839;
 }
 * {

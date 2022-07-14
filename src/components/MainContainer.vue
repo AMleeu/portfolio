@@ -15,3 +15,9 @@ export default {
     }
 }
 </script>
+
+<style>
+    #main-container{
+        margin-left: 270px;
+    }
+</style>
