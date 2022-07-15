@@ -1,20 +1,18 @@
 <template>
   <div class="content-section">
-      <HomeContent />
+    <HomeContent />
   </div>
 </template>
 
 <script>
-import HomeContent from "./HomeContent.vue"
+import HomeContent from "./HomeContent.vue";
 
 export default {
-  components:{
+  components: {
     HomeContent,
   },
-  created(){
-
-  }
-}
+  created() {},
+};
 </script>
 
 <style>
@@ -38,40 +36,42 @@ section {
     each content placed in section will have a div.content-container
     this is the global styling for it
 */
-section .content-container{
-  max-width:1100px;
-  width:100%;
-  margin:auto;
+section .content-container {
+  max-width: 1100px;
+  width: 100%;
+  margin: auto;
 }
 /*
     every content placed in section will have a div.row 
     this is the global styling for it
 */
-section .content-container .row{
-  display:flex;
+section .content-container .row {
+  display: flex;
   flex-wrap: wrap;
   margin-left: 15px;
-  position:relative;
+  position: relative;
 }
 /*
     most content placed in section will have a a.btn 
     this is the global styling for it
 */
-.btn{
-  font-size:16px;
+.btn {
+  font-size: 16px;
   font-weight: 500;
-  padding:12px 35px;
-  background:var(--primary);
-  color:#fff;
-  letter-spacing:1.05px;
+  padding: 12px 35px;
+  background: var(--primary);
+  color: #fff;
+  letter-spacing: 1.05px;
   font-weight: 600;
-  border-radius:40px;
-  display:inline-block;
-  white-space:nowrap;
+  border-radius: 40px;
+  display: inline-block;
+  white-space: nowrap;
   border: none;
+  box-shadow: 3px 3px 5px 0px rgb(0 0 0 / 20%);
   transition: all 0.25s ease-in;
 }
-.btn:hover{
-  transform: scale(1.05);
+.btn:hover {
+  transform: scale(1.02);
+  box-shadow: none;
 }
 </style>

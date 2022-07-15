@@ -27,6 +27,7 @@ export default {
   --padd-x-15:0 15px 0 15px;
   --margin-y-15:15px 0 15px 0;
   --primary: #ec1839;
+  --accent: #FFBFF8;
 }
 * {
   margin: 0px;

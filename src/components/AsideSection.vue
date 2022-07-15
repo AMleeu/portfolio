@@ -1,10 +1,7 @@
 <template>
-  <div id="aside-section">
+  <div  :class="['aside-section',hideAside?'hide':'']">
     <div id="logo">
       <a href="#"><span>A</span>lbert</a>
-    </div>
-    <div class="nav-toggler">
-      <font-awesome-icon icon="fa-solid fa-bars" />
     </div>
     <ul class="nav">
       <li>
@@ -34,7 +31,7 @@
 
 <script>
 /*
-  set up font-awesom and import required modules
+  import required font-awesome modules & components
 */
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -42,16 +39,20 @@ import {
   faUserGear,
   faBoxOpen,
   faBars,
-  faFingerprint
+  faFingerprint,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(faHomeAlt, faUserGear, faFingerprint, faBoxOpen, faBars);
 
-export default {};
+export default {
+  props:{
+    hideAside:Boolean,
+  }
+};
 </script>
 
 <style>
-#aside-section {
+.aside-section {
   width: 270px;
   background: var(--bg-black-100);
   padding: 30px;
@@ -64,17 +65,24 @@ export default {};
   justify-content: center;
   align-items: center;
   border-right:1px solid var(--bg-black-50);
+  transition: all 0.25s ease-in;
+}
+.aside-section.hide{
+  left:-270px !important;
 }
 /*=================================
 logo
 ==================================*/
-#aside-section #logo{
+.aside-section #logo{
+  transition: all 0.25s ease-in;
+}
+.aside-section #logo{
   position:absolute;
   top:50px;
   font-size: 30px;
   text-transform: capitalize;
 }
-#aside-section #logo a{
+.aside-section #logo a{
   color: var(--text-black-900);
   font-weight: 600;
   padding: 15px 20px;
@@ -82,7 +90,7 @@ logo
   letter-spacing: 5px;
   position: relative;
 }
-#aside-section #logo a::before{
+.aside-section #logo a::before{
   content: '';
   position: absolute;
   width: 20px;
@@ -92,7 +100,7 @@ logo
   top:0;
   left:0;
 }
-#aside-section #logo a::after{
+.aside-section #logo a::after{
   content: '';
   position: absolute;
   width: 20px;
@@ -102,43 +110,22 @@ logo
   bottom:0;
   right:0;
 }
-#aside-section #logo span{
+.aside-section #logo span{
   font-family: 'Edu TAS Beginner', cursive;
-}
-
-/*=================================
-nav-toggler
-==================================*/
-#aside-section .nav-toggler{
-  height:40px;
-  width: 45px;
-  border: 1px solid var(--bg-black-50);
-  cursor:pointer;
-  position:fixed; 
-  left:20px;
-  top: 20px;
-  border-radius: 5px;
-  background: var(--bg-black-100);
-  display:none;
-  justify-content: center;
-  align-items: center;
-}
-#aside-section .nav-toggler .svg-inline--fa{
-  color:var(--primary);
 }
 
 /*=================================
 nav
 ==================================*/
-#aside-section .nav{
+.aside-section .nav{
   list-style: none;
   margin-top: 50px;
 }
-#aside-section .nav li{
+.aside-section .nav li{
   margin-top: var(--text-margin-top);
   display:block;
 }
-#aside-section .nav li a{
+.aside-section .nav li a{
   font-size:16px;
   font-weight: 600;
   display:block;
@@ -146,22 +133,22 @@ nav
   color:var(--text-black-900);
   padding: 5px 15px;
 }
-#aside-section .nav li a:hover,
-#aside-section .nav li a:focus{
+.aside-section .nav li a:hover,
+.aside-section .nav li a:focus{
   color:var(--bg-black-50);
 }
-#aside-section .nav a.active{
+.aside-section .nav a.active{
   color: var(--primary);
 }
-#aside-section .nav li a.active:hover,
-#aside-section .nav li a.active:focus{
+.aside-section .nav li a.active:hover,
+.aside-section .nav li a.active:focus{
   color:var(--primary);
   cursor:default;
 }
 /*
   give each icon a standard width
 */
-#aside-section li .svg-inline--fa{
+.aside-section li .svg-inline--fa{
   width:18px;
 }
 </style>
