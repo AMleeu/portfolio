@@ -1,6 +1,10 @@
 <template>
   <div :class="['main-container', hideAside ? 'no-margin-left' : '']">
-    <AsideSection :hide-aside="hideAside" />
+      <AsideSection
+        :hide-aside="hideAside"
+        @updateContent="updateContent"
+        :content="content"
+      />
     <div class="fixed-icon-container">
       <font-awesome-icon
         icon="fa-solid fa-chevron-circle-left"
@@ -15,12 +19,15 @@
         @click="toggleHideAside"
       />
     </div>
-    <ContentSection />
+    <ContentSection v-show="content == 'home'" />
+    <ComingSoon v-show="content != 'home'" />
   </div>
 </template>
 <script>
 import AsideSection from "./AsideSection.vue";
 import ContentSection from "./ContentSection.vue";
+import ComingSoon from "./ComingSoon.vue";
+
 /*
   import required font-awesome modules & components
 */
@@ -36,10 +43,12 @@ export default {
   components: {
     AsideSection,
     ContentSection,
+    ComingSoon,
   },
   data() {
     return {
       hideAside: false,
+      content: "home",
     };
   },
   methods: {
@@ -49,6 +58,12 @@ export default {
       } else {
         this.hideAside = false;
       }
+    },
+    /*
+        return value emitted from AsideSection
+      */
+    updateContent(content = "home") {
+      this.content = content;
     },
   },
 };
@@ -74,8 +89,9 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation-name: spin;
+  animation-name: headShake;
   animation-duration: 2s;
+  animation-delay: 2s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-out;
   animation-fill-mode: initial;
@@ -91,12 +107,12 @@ export default {
   background: var(--primary);
   box-shadow: none;
   opacity: 0.75;
+  box-shadow: 3px 3px 5px 0px rgb(0 0 0 / 20%);
 }
 
-@keyframes spin {
+@keyframes wiggle {
   to {
     transform: translateX(-5px);
-    box-shadow: 3px 3px 5px 0px rgb(0 0 0 / 20%);
   }
 }
 </style>

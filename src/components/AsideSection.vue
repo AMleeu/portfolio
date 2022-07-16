@@ -1,27 +1,43 @@
 <template>
-  <div  :class="['aside-section',hideAside?'hide':'']">
+  <div class="aside-section" v-if="hideAside == false">
     <div id="logo">
       <a href="#"><span>A</span>lbert</a>
     </div>
     <ul class="nav">
       <li>
-        <a href="" class="active">
+        <a
+          href="#"
+          :class="[content == 'home' ? 'active' : '']"
+          @click="$emit('updateContent', 'home')"
+        >
           <font-awesome-icon icon="fa-solid fa-home-alt" />
           &nbsp; home
         </a>
       </li>
       <li>
-        <a href="">
+        <a
+          href="#"
+          :class="[content == 'my services' ? 'active' : '']"
+          @click="$emit('updateContent', 'my services')"
+        >
           <font-awesome-icon icon="fa-solid fa-user-gear" /> &nbsp; my services
         </a>
       </li>
       <li>
-        <a href="">
+        <a
+          href="#"
+          :class="[content == 'my projects' ? 'active' : '']"
+          @click="$emit('updateContent', 'my projects')"
+        >
           <font-awesome-icon icon="fa-solid fa-box-open" /> &nbsp; my projects
         </a>
       </li>
       <li>
-        <a href="">
+        <a
+          href="#"
+          :class="[content == 'reach me' ? 'active' : '']"
+          @click="$emit('updateContent', 'reach me')"
+        >
           <font-awesome-icon icon="fa-solid fa-fingerprint" /> &nbsp; reach me
         </a>
       </li>
@@ -45,9 +61,19 @@ import {
 library.add(faHomeAlt, faUserGear, faFingerprint, faBoxOpen, faBars);
 
 export default {
-  props:{
-    hideAside:Boolean,
-  }
+  emits: ["updateContent"],
+  props: {
+    hideAside: Boolean,
+    content: {
+      type: String,
+      default: "home",
+    },
+  },
+  methods: {
+    selectContent(content) {
+      this.updateContent(content);
+    },
+  },
 };
 </script>
 
@@ -64,25 +90,30 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-right:1px solid var(--bg-black-50);
+  border-right: 1px solid var(--bg-black-50);
   transition: all 0.25s ease-in;
 }
-.aside-section.hide{
-  left:-270px !important;
+.aside-section.hide {
+  left: -270px !important;
 }
 /*=================================
 logo
 ==================================*/
-.aside-section #logo{
+.aside-section #logo {
   transition: all 0.25s ease-in;
 }
-.aside-section #logo{
-  position:absolute;
-  top:50px;
+.aside-section #logo {
+  position: absolute;
+  top: 50px;
   font-size: 30px;
   text-transform: capitalize;
+  animation-name: bounceInDown;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-fill-mode: initial;
 }
-.aside-section #logo a{
+.aside-section #logo a {
   color: var(--text-black-900);
   font-weight: 600;
   padding: 15px 20px;
@@ -90,65 +121,70 @@ logo
   letter-spacing: 5px;
   position: relative;
 }
-.aside-section #logo a::before{
-  content: '';
+.aside-section #logo a::before {
+  content: "";
   position: absolute;
   width: 20px;
-  height:20px;
-  border-top:5px solid var(--primary);
-  border-left:5px solid var(--primary);
-  top:0;
-  left:0;
+  height: 20px;
+  border-top: 5px solid var(--primary);
+  border-left: 5px solid var(--primary);
+  top: 0;
+  left: 0;
 }
-.aside-section #logo a::after{
-  content: '';
+.aside-section #logo a::after {
+  content: "";
   position: absolute;
   width: 20px;
-  height:20px;
-  border-bottom:5px solid var(--primary);
-  border-right:5px solid var(--primary);
-  bottom:0;
-  right:0;
+  height: 20px;
+  border-bottom: 5px solid var(--primary);
+  border-right: 5px solid var(--primary);
+  bottom: 0;
+  right: 0;
 }
-.aside-section #logo span{
-  font-family: 'Edu TAS Beginner', cursive;
+.aside-section #logo span {
+  font-family: "Edu TAS Beginner", cursive;
 }
 
 /*=================================
 nav
 ==================================*/
-.aside-section .nav{
+.aside-section .nav {
   list-style: none;
   margin-top: 50px;
+  animation-name: bounceInUp;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-fill-mode: initial;
 }
-.aside-section .nav li{
+.aside-section .nav li {
   margin-top: var(--text-margin-top);
-  display:block;
+  display: block;
 }
-.aside-section .nav li a{
-  font-size:16px;
+.aside-section .nav li a {
+  font-size: 16px;
   font-weight: 600;
-  display:block;
+  display: block;
   border-bottom: 1px solid var(--bg-black-50);
-  color:var(--text-black-900);
+  color: var(--text-black-900);
   padding: 5px 15px;
 }
 .aside-section .nav li a:hover,
-.aside-section .nav li a:focus{
-  color:var(--bg-black-50);
+.aside-section .nav li a:focus {
+  color: var(--bg-black-50);
 }
-.aside-section .nav a.active{
+.aside-section .nav a.active {
   color: var(--primary);
 }
 .aside-section .nav li a.active:hover,
-.aside-section .nav li a.active:focus{
-  color:var(--primary);
-  cursor:default;
+.aside-section .nav li a.active:focus {
+  color: var(--primary);
+  cursor: default;
 }
 /*
   give each icon a standard width
 */
-.aside-section li .svg-inline--fa{
-  width:18px;
+.aside-section li .svg-inline--fa {
+  width: 18px;
 }
 </style>

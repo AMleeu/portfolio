@@ -10,8 +10,7 @@ import HomeContent from "./HomeContent.vue";
 export default {
   components: {
     HomeContent,
-  },
-  created() {},
+  }
 };
 </script>
 
@@ -57,11 +56,11 @@ section .content-container .row {
 */
 .btn {
   font-size: 16px;
-  font-weight: 500;
+  font-weight:600;
   padding: 12px 35px;
   background: var(--primary);
   color: #fff;
-  letter-spacing: 1.05px;
+  letter-spacing: 1.12px;
   font-weight: 600;
   border-radius: 40px;
   display: inline-block;
@@ -69,9 +68,15 @@ section .content-container .row {
   border: none;
   box-shadow: 3px 3px 5px 0px rgb(0 0 0 / 20%);
   transition: all 0.25s ease-in;
+  animation-name: jello;
+  animation-duration: 2s;
+  animation-delay: 6s;
+  animation-iteration-count: 3;
+  animation-timing-function: ease-out;
+  animation-fill-mode: initial;
 }
 .btn:hover {
-  transform: scale(1.02);
+  transform: scale(1.05);
   box-shadow: none;
 }
 </style>
