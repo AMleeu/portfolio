@@ -3,6 +3,7 @@
       <AsideSection
         :hide-aside="hideAside"
         @updateContent="updateContent"
+        @shutdown="shutdown"
         :content="content"
       />
     <div class="fixed-icon-container" @click="toggleHideAside">
@@ -17,13 +18,12 @@
         v-show="hideAside"
       />
     </div>
-    <ContentSection v-if="content == 'home'" />
+    <ContentSection v-if="content == 'home' || content == 'email me'" />
   </div>
 </template>
 <script>
 import AsideSection from "./AsideSection.vue";
 import ContentSection from "./ContentSection.vue";
-import ComingSoon from "./ComingSoon.vue";
 
 /*
   import required font-awesome modules & components
@@ -37,10 +37,10 @@ import {
 library.add(faChevronCircleLeft, faChevronCircleRight);
 
 export default {
+  emits:['shutdown'],
   components: {
     AsideSection,
     ContentSection,
-    ComingSoon,
   },
   data() {
     return {
@@ -62,7 +62,17 @@ export default {
     */
     updateContent(content = "home") {
       this.content = content;
+      if(this.content == "email me"){
+        this.hideAside = true;
+      }
     },
+    /*
+      bubble the emitted event from AsideSection through to App
+    */
+    shutdown(){
+      this.$emit('shutdown');
+      this.$destroy();
+    }
   },
   mounted(){
     /*

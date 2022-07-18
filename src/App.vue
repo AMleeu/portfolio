@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <MainContainer />
+    <MainContainer v-if="shutdownVal == false" @shutdown="shutdown" />
   </div>
 </template>
 
@@ -11,6 +11,17 @@ export default {
   name: "App",
   components:{
     MainContainer
+  },
+  data(){
+    return{
+      shutdownVal:false
+    }
+  },
+  methods:{
+    shutdown(){
+      this.shutdownVal = true;
+      console.log("app component");
+    }
   }
 };
 </script>

@@ -5,7 +5,7 @@
         <div class="home-details">
           <h3 class="greeting">Hi, i am <span>Albert</span></h3>
           <h3 class="profession">
-            I am a <span ref="typing">Front-End Developer</span>
+            I am a <span>Front-End Developer</span>
           </h3>
           <p ref="typeP"></p>
           <a href="#contact" class="btn">
@@ -40,12 +40,11 @@ export default {
     };
   },
   methods: {
-    typeP() {
+    type() {
       if (this.charIndex < this.pText.length) {
         this.$refs.typeP.innerHTML += this.pText[this.charIndex];
         this.charIndex++; 
-        console.log(this.charIndex);
-        setTimeout(this.typeP, 100)
+        setTimeout(this.type, 100)
       }
     },
   },
@@ -53,7 +52,7 @@ export default {
     /*
       delay typing effect only after anymation has finished
     */
-    setInterval(this.typeP, 2000);
+    setInterval(this.type, 2000);
   },
 };
 </script>

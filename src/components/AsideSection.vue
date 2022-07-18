@@ -16,6 +16,25 @@
       </li>
       <li>
         <a
+          href="mailto:albert.m.leeu@gmail.com"
+          @click="$emit('updateContent', 'email me')"
+        >
+          <font-awesome-icon icon="fa-solid fa-envelope-circle-check" />
+          &nbsp; email me
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          @click="$emit('shutdown')"
+        >
+          <font-awesome-icon icon="fa-solid fa-power-off" />
+          &nbsp; shutdown
+        </a>
+      </li>
+      <!--
+      <li>
+        <a
           href="#"
           :class="[content == 'my services' ? 'active' : '']"
           @click="$emit('updateContent', 'my services')"
@@ -41,6 +60,7 @@
           <font-awesome-icon icon="fa-solid fa-fingerprint" /> &nbsp; reach me
         </a>
       </li>
+      -->
     </ul>
   </div>
 </template>
@@ -52,16 +72,18 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faHomeAlt,
+  faPowerOff,
+  faEnvelopeCircleCheck,
   faUserGear,
   faBoxOpen,
   faBars,
   faFingerprint,
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faHomeAlt, faUserGear, faFingerprint, faBoxOpen, faBars);
+library.add(faHomeAlt, faPowerOff, faEnvelopeCircleCheck, faUserGear, faFingerprint, faBoxOpen, faBars);
 
 export default {
-  emits: ["updateContent"],
+  emits: ["updateContent", "shutdown"],
   props: {
     hideAside: Boolean,
     content: {
