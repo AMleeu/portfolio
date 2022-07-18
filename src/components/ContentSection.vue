@@ -1,5 +1,5 @@
 <template>
-  <div class="content-section">
+  <div id="content-section">
     <HomeContent />
   </div>
 </template>
@@ -23,20 +23,15 @@ section {
   background: var(--bg-black-900);
   min-height: 100vh;
   display: block;
-  /*position: fixed;
-  left: 270px;
-  top: 0;
-  right: 0;
-  opacity: 1;*/
+  margin-left: 0px !important;
   z-index: 0;
-  padding: 0 30px;
 }
 /*
     each content placed in section will have a div.content-container
     this is the global styling for it
 */
 section .content-container {
-  max-width: 1100px;
+  max-width: 90%;
   width: 100%;
   margin: auto;
 }
@@ -47,7 +42,6 @@ section .content-container {
 section .content-container .row {
   display: flex;
   flex-wrap: wrap;
-  margin-left: 15px;
   position: relative;
 }
 /*

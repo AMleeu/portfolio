@@ -40,6 +40,7 @@ body {
   line-height: 1.5;
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
+  min-width:324px !important;
 }
 ::before,
 ::after {

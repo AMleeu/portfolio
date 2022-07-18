@@ -1,5 +1,5 @@
 <template>
-  <div :class="['main-container', hideAside ? 'no-margin-left' : '']">
+  <div :class="['main-container', hideAside || innerWidth < 1072 ? 'no-margin-left' : '']">
       <AsideSection
         :hide-aside="hideAside"
         @updateContent="updateContent"
@@ -48,24 +48,45 @@ export default {
   data() {
     return {
       hideAside: false,
+      innerWidth: 2000,
       content: "home",
     };
   },
   methods: {
     toggleHideAside() {
-      if (!this.hideAside) {
-        this.hideAside = true;
-      } else {
-        this.hideAside = false;
-      }
+        if (!this.hideAside) {
+          this.hideAside = true;
+        } else{
+          this.hideAside = false;
+        }
     },
     /*
-        return value emitted from AsideSection
-      */
+      return value emitted from AsideSection
+    */
     updateContent(content = "home") {
       this.content = content;
     },
   },
+  mounted(){
+    /*
+       on load 
+        -> update this.innerWidth 
+        and if it is lower than 1072 hide AsideSection
+    */
+    window.addEventListener('load', ()=>{
+      this.innerWidth = window.innerWidth;
+      if(window.innerWidth < 1072){
+        this.hideAside = true;
+      }
+    });
+    /*
+      on resize 
+      -> update this.innerWidth 
+    */
+    window.addEventListener('resize', ()=>{
+      this.innerWidth = window.innerWidth;
+    });
+  }
 };
 </script>
 
@@ -108,11 +129,5 @@ export default {
   box-shadow: none;
   opacity: 0.75;
   box-shadow: 3px 3px 5px 0px rgb(0 0 0 / 20%);
-}
-
-@keyframes wiggle {
-  to {
-    transform: translateX(-5px);
-  }
 }
 </style>

@@ -11,7 +11,7 @@
             I have expertise in Vue JS and the Vue ecosystem of libraries. I
             build ambitious User Interfaces with modular pieces of logic.
           </p>
-          <a href="#contact" class="btn hire-me">
+          <a href="#contact" class="btn">
             <font-awesome-icon icon="fa-solid fa-file-download" />
             resume
           </a>
@@ -62,7 +62,6 @@ section.home {
 .home-details {
   flex: 0 0 60%;
   max-width: 60%;
-  padding: var(--padd-x-15);
 }
 .home-details .greeting {
   font-size: 28px;
@@ -104,8 +103,7 @@ section.home {
 .home-img {
   flex: 0 0 40%;
   max-width: 40%;
-  text-align: center;
-  padding: var(--padd-x-15);
+  text-align: right;
 }
 .home-img::before {
   content: "";
@@ -123,10 +121,9 @@ section.home {
   height: 80px;
   width: 80px;
   border-bottom: 10px solid var(--primary);
-  border-right: 10px solid var(--primary);
 }
 .home-img .avatar {
-  height: 400px;
+  height: 200px;
   margin: auto;
   border-radius: 5px;
   filter: grayscale();
