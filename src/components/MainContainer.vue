@@ -18,7 +18,6 @@
       />
     </div>
     <ContentSection v-if="content == 'home'" />
-    <ComingSoon v-else-if="content != 'home'" />
   </div>
 </template>
 <script>
