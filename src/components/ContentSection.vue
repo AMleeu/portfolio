@@ -64,7 +64,7 @@ section .content-container .row {
   transition: all 0.25s ease-in;
   animation-name: jello;
   animation-duration: 2s;
-  animation-delay: 6s;
+  animation-delay: 8s;
   animation-iteration-count: 3;
   animation-timing-function: ease-out;
   animation-fill-mode: initial;

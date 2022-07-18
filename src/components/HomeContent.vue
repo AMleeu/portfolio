@@ -7,10 +7,7 @@
           <h3 class="profession">
             I am a <span ref="typing">Front-End Developer</span>
           </h3>
-          <p>
-            I have expertise in Vue JS and the Vue ecosystem of libraries. I
-            build ambitious User Interfaces with modular pieces of logic.
-          </p>
+          <p ref="typeP"></p>
           <a href="#contact" class="btn">
             <font-awesome-icon icon="fa-solid fa-file-download" />
             resume
@@ -38,18 +35,26 @@ export default {
   data() {
     return {
       avatarUrl,
+      pText: "I build ambitious User Interfaces with modular pieces of logic.",
+      charIndex: 0,
     };
   },
   methods: {
-    typing() {
-      //let typingEl = this.$refs.typing;
+    typeP() {
+      if (this.charIndex < this.pText.length) {
+        this.$refs.typeP.innerHTML += this.pText[this.charIndex];
+        this.charIndex++; 
+        console.log(this.charIndex);
+        setTimeout(this.typeP, 100)
+      }
     },
   },
-  /*
-  mounted(){
-    this.typing();
-  }
-  */
+  mounted() {
+    /*
+      delay typing effect only after anymation has finished
+    */
+    setInterval(this.typeP, 2000);
+  },
 };
 </script>
 
@@ -127,8 +132,8 @@ section.home {
   margin: auto;
   border-radius: 5px;
   filter: grayscale();
-  animation-name: flip;
-  animation-duration: 6s;
+  animation-name: bounceIn;
+  animation-duration: 2s;
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
   animation-fill-mode: initial;

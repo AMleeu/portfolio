@@ -5,22 +5,20 @@
         @updateContent="updateContent"
         :content="content"
       />
-    <div class="fixed-icon-container">
+    <div class="fixed-icon-container" @click="toggleHideAside">
       <font-awesome-icon
         icon="fa-solid fa-chevron-circle-left"
         id="close-aside"
         v-show="!hideAside"
-        @click="toggleHideAside"
       />
       <font-awesome-icon
         icon="fa-solid fa-chevron-circle-right"
         id="open-aside"
         v-show="hideAside"
-        @click="toggleHideAside"
       />
     </div>
-    <ContentSection v-show="content == 'home'" />
-    <ComingSoon v-show="content != 'home'" />
+    <ContentSection v-if="content == 'home'" />
+    <ComingSoon v-else-if="content != 'home'" />
   </div>
 </template>
 <script>
@@ -110,9 +108,9 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation-name: headShake;
-  animation-duration: 2s;
-  animation-delay: 2s;
+  animation-name: tada;
+  animation-duration: 1s;
+  animation-delay: 12s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-out;
   animation-fill-mode: initial;
