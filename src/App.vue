@@ -6,7 +6,7 @@
       component is conditionally rendered
     -->
     <MainContainer v-if="shutdownVal == false" @shutdown="shutdown" />
-    <ShutDown v-if-else="shutdownVal" @switchOn="switchOn"/> 
+    <ShutDown v-else-if="shutdownVal" @switchOn="switchOn"/> 
   </div>
 </template>
 
@@ -28,7 +28,6 @@ export default {
   methods:{
     shutdown(){
       this.shutdownVal = true;
-      location.reload();
     },
     switchOn(){
       this.shutdownVal = false;

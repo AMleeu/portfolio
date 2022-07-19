@@ -74,16 +74,14 @@ export default {
   },
   mounted(){
     /*
-       on load 
+       when mounted
         -> update this.innerWidth 
         and if it is lower than 1072 hide AsideSection
     */
-    window.addEventListener('load', ()=>{
-      this.innerWidth = window.innerWidth;
-      if(window.innerWidth < 1072){
-        this.hideAside = true;
-      }
-    });
+    this.innerWidth = window.innerWidth;
+    if(window.innerWidth < 1072){
+      this.hideAside = true;
+    }
     /*
       on resize 
       -> update this.innerWidth 

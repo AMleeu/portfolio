@@ -54,17 +54,14 @@ export default {
     switchOn() {
       this.$emit("switchOn");
       this.$destroy();
-      this.$el.parentNode.removeChild(this.$el)
     },
   },
   mounted() {
     /*
       reset this.timeLeft to 6
     */
-   window.addEventListener('load', ()=>{
-      this.timeLeft = 6;
-      this.countDown();
-   });
+    this.timeLeft = 6;
+    this.countDown();
   },
 };
 </script>
