@@ -17,7 +17,7 @@
       <li>
         <a
           href="mailto:albert.m.leeu@gmail.com"
-          @click="$emit('updateContent', 'email me')"
+          @click="$emit('updateContent', 'home')"
         >
           <font-awesome-icon icon="fa-solid fa-envelope-circle-check" />
           &nbsp; email me

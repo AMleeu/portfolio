@@ -10,10 +10,6 @@ import "animate.css";
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 Vue.config.productionTip = false;
-/*
-  make window available as a global property to our applications
-*/
-Vue.prototype.window = window;
 
 new Vue({
   render: (h) => h(App),

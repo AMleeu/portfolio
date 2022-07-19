@@ -58,13 +58,11 @@ export default {
         }
     },
     /*
-      return value emitted from AsideSection
+      use value emitted from AsideSection
     */
     updateContent(content = "home") {
       this.content = content;
-      if(this.content == "email me"){
-        this.hideAside = true;
-      }
+      this.hideAside = true;
     },
     /*
       bubble the emitted event from AsideSection through to App
@@ -133,7 +131,6 @@ export default {
 }
 .fixed-icon-container .svg-inline--fa:hover {
   background: var(--primary);
-  box-shadow: none;
   opacity: 0.75;
   box-shadow: 3px 3px 5px 0px rgb(0 0 0 / 20%);
 }

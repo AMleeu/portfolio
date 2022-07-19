@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <MainContainer v-if="shutdownVal == false" @shutdown="shutdown" />
-    <ShutDown v-else /> 
+    <ShutDown v-else-if="shutdownVal" @switchOn="switchOn"/> 
   </div>
 </template>
 
@@ -23,9 +23,11 @@ export default {
   methods:{
     shutdown(){
       this.shutdownVal = true;
-      console.log("app component");
+    },
+    switchOn(){
+      this.shutdownVal = false;
     }
-  }
+  },
 };
 </script>
 

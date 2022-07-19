@@ -1,31 +1,67 @@
 <template>
   <div class="shutdown-container">
-    <h1>shutting down</h1>
+    <h1 ref="heading">please wait</h1>
     <div class="shutdown-clock">
-      <span ref="seconds"></span>
+      <span ref="seconds" v-show="timeLeft > 0">
+        <font-awesome-icon icon="fa-solid fa-power-off"  @click="switchOn" />
+      </span>
+      <span v-show="timeLeft == 0">
+        <font-awesome-icon icon="fa-solid fa-power-off" @click="switchOn" />
+      </span>
     </div>
   </div>
 </template>
 <script>
+/*
+  import required font-awesome modules & components
+*/
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faPowerOff } from "@fortawesome/free-solid-svg-icons";
+
+library.add(faPowerOff);
 export default {
-    data(){
-        return{
-            timeLeft:5
-        }
+  emits: ["switchOn"],
+  data() {
+    return {
+      timeLeft: 5,
+    };
+  },
+  watch: {
+    /*
+        keep track on changes to this.timeLeft 
+        if == 0
+          what for a 0.25 seconds (so the 0 can display) 
+          & then 
+            change the h1 inner HTML to 'switch on'
+      */
+    timeLeft(val) {
+      if (val == 0) {
+        setInterval(() => {
+          this.$refs.heading.innerHTML = "switch on";
+        }, 500);
+      }
     },
-    methods:{
-        countDown(){
-            this.$refs.seconds.innerHTML = this.timeLeft.toString()
-            this.timeLeft--;
-            if(this.timeLeft >= 0){
-                setTimeout(this.countDown, 1000);
-            }
-        }
+  },
+  methods: {
+    countDown() {
+      if (this.timeLeft > 0) {
+        this.timeLeft--;
+      }
+      if (this.timeLeft > 0) {
+        this.$refs.seconds.innerHTML = this.timeLeft.toString();
+        setTimeout(this.countDown, 1000);
+      }
     },
-    mounted(){
-        this.countDown();
-    }
-}
+    switchOn() {
+      this.$emit("switchOn");
+      this.$destroy();
+    },
+  },
+  mounted() {
+    // wait a second before stating the count down
+    this.countDown();
+  },
+};
 </script>
 <style>
 .shutdown-container {
@@ -35,7 +71,7 @@ export default {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background-image: url('../assets/img/bg.jpg') ;
+  background-image: url("../assets/img/bg.jpg");
   background-repeat: repeat;
 }
 .shutdown-container h1 {
@@ -61,7 +97,7 @@ export default {
   padding: 20px;
   padding-bottom: 0px;
   bottom: 52vh;
-  right:calc(40vw -180);
+  right: calc(40vw -180);
   z-index: 10;
   background: var(--primary);
   color: var(--bg-black-100);
@@ -75,8 +111,18 @@ export default {
   width: 100%;
   margin: auto;
   padding-top: 50px;
-  padding-left:-120px;
+  padding-left: -120px;
   text-align: center;
   font-size: 120px;
+}
+
+.shutdown-container .shutdown-clock span .svg-inline--fa {
+  margin-top: -50px;
+  transition: all 0.25s ease-in;
+}
+.shutdown-container .shutdown-clock span .svg-inline--fa:hover {
+  cursor: pointer;
+  opacity: 0.75;
+  transform: scale(0.95);
 }
 </style>
