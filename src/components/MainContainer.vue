@@ -107,8 +107,9 @@ export default {
   width: 45px;
   cursor: pointer;
   position: fixed;
-  right: 20px;
-  top: 20px;
+  z-index:1000;
+  right: 15px;
+  top: 15px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
