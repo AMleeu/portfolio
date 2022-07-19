@@ -45,12 +45,14 @@ export default {
         this.$refs.typeP.innerHTML += this.pText[this.charIndex];
         this.charIndex++; 
         setTimeout(this.type, 100)
+      }else{
+        this.charIndex
       }
     },
   },
   mounted() {
     /*
-      delay typing effect only after anymation has finished
+      delay typing effect only after animation has finished
     */
     setInterval(this.type, 2000);
   },

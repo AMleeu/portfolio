@@ -3,7 +3,6 @@
     <h1 ref="heading">please wait</h1>
     <div class="shutdown-clock">
       <span ref="seconds" v-show="timeLeft > 0">
-        <font-awesome-icon icon="fa-solid fa-power-off"  @click="switchOn" />
       </span>
       <span v-show="timeLeft == 0">
         <font-awesome-icon icon="fa-solid fa-power-off" @click="switchOn" />
@@ -23,7 +22,7 @@ export default {
   emits: ["switchOn"],
   data() {
     return {
-      timeLeft: 5,
+      timeLeft: 6,
     };
   },
   watch: {
@@ -55,11 +54,17 @@ export default {
     switchOn() {
       this.$emit("switchOn");
       this.$destroy();
+      this.$el.parentNode.removeChild(this.$el)
     },
   },
   mounted() {
-    // wait a second before stating the count down
-    this.countDown();
+    /*
+      reset this.timeLeft to 6
+    */
+   window.addEventListener('load', ()=>{
+      this.timeLeft = 6;
+      this.countDown();
+   });
   },
 };
 </script>
@@ -84,6 +89,29 @@ export default {
   color: var(--text-black-900);
   transform: skewY(-10deg);
   box-shadow: 10px 10px 20px rgb(0 0 0 / 0.3);
+  animation-name: fadeIn;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-fill-mode: initial;
+}
+.shutdown-container h1::before {
+  content: "";
+  width: 60%;
+  height: 2px;
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  background: var(--bg-black-50);
+}
+.shutdown-container h1::after {
+  content: "";
+  width: 60%;
+  height: 2px;
+  position: absolute;
+  top: -50px;
+  right: 0;
+  background: var(--bg-black-50);
 }
 .shutdown-container .shutdown-clock {
   width: 180px;
@@ -119,6 +147,11 @@ export default {
 .shutdown-container .shutdown-clock span .svg-inline--fa {
   margin-top: -50px;
   transition: all 0.25s ease-in;
+  animation-name: flash;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+  animation-fill-mode: initial;
 }
 .shutdown-container .shutdown-clock span .svg-inline--fa:hover {
   cursor: pointer;

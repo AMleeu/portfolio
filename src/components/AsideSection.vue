@@ -127,7 +127,6 @@ logo
 .aside-section #logo {
   position: absolute;
   top: 50px;
-  font-size: 30px;
   text-transform: capitalize;
   animation-name: bounceInDown;
   animation-duration: 1s;
@@ -139,7 +138,7 @@ logo
   color: var(--text-black-900);
   font-weight: 600;
   padding: 15px 20px;
-  font-size: 30px;
+  font-size: 31px;
   letter-spacing: 5px;
   position: relative;
 }
@@ -164,6 +163,7 @@ logo
   right: 0;
 }
 .aside-section #logo span {
+  font-size: 37px;
   font-family: "Edu TAS Beginner", cursive;
 }
 
@@ -184,7 +184,7 @@ nav
   display: block;
 }
 .aside-section .nav li a {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   display: block;
   border-bottom: 1px solid var(--bg-black-50);

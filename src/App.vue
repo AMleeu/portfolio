@@ -1,7 +1,12 @@
 <template>
   <div id="app">
+    <!--
+      using v-if innstead of v-swoh because there's animations
+      that require the mounted lifecycle method to run each time the 
+      component is conditionally rendered
+    -->
     <MainContainer v-if="shutdownVal == false" @shutdown="shutdown" />
-    <ShutDown v-else-if="shutdownVal" @switchOn="switchOn"/> 
+    <ShutDown v-if-else="shutdownVal" @switchOn="switchOn"/> 
   </div>
 </template>
 
@@ -23,6 +28,7 @@ export default {
   methods:{
     shutdown(){
       this.shutdownVal = true;
+      location.reload();
     },
     switchOn(){
       this.shutdownVal = false;
@@ -53,6 +59,8 @@ export default {
   box-sizing: border-box;
 }
 body {
+  background-image: url("./assets/img/bg.jpg");
+  background-repeat: repeat;
   line-height: 1.5;
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
