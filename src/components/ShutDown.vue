@@ -80,8 +80,8 @@ export default {
   background-repeat: repeat;
 }
 .shutdown-container h1 {
-  font-size: 100px;
-  line-height: 100px;
+  font-size: 10vw;
+  line-height: 10vw;
   font-weight: 600;
   text-transform: lowercase;
   padding: 20px;
@@ -103,6 +103,7 @@ export default {
   bottom: -50px;
   left: 0;
   background: var(--bg-black-50);
+  box-shadow: 10px 10px 20px rgb(0 0 0 / 0.3);
 }
 .shutdown-container h1::after {
   content: "";
@@ -112,6 +113,7 @@ export default {
   top: -50px;
   right: 0;
   background: var(--bg-black-50);
+  box-shadow: 10px 10px 20px rgb(0 0 0 / 0.3);
 }
 .shutdown-container .shutdown-clock {
   width: 180px;
@@ -157,5 +159,36 @@ export default {
   cursor: pointer;
   opacity: 0.75;
   transform: scale(0.95);
+}
+
+@media(max-width:978px){
+ .shutdown-container .shutdown-clock {
+  width: 80px;
+  height: 80px;
+  padding: 5px;
+ } 
+ .shutdown-container .shutdown-clock span {
+  font-size: 60px;
+  padding-top: 18px;
+  padding-left: -60px; 
+}
+.shutdown-container .shutdown-clock span .svg-inline--fa {
+  margin-top: -15px;
+}
+}
+@media(max-width:508px){
+ .shutdown-container .shutdown-clock {
+  width: 55px;
+  height: 55px;
+  padding: 2.5px;
+ } 
+ .shutdown-container .shutdown-clock span {
+  font-size: 30px;
+  padding-top: 9px;
+  padding-left: -30px; 
+}
+.shutdown-container .shutdown-clock span .svg-inline--fa {
+  margin-top: -10px;
+}
 }
 </style>
