@@ -61,7 +61,7 @@ export default {
 section.home {
   min-height: 100vh;
   display: flex;
-  color: var(--text-black-900);
+  color: var(--text-black-700);
 }
 .home-details {
   flex: 0 0 60%;
@@ -85,7 +85,7 @@ section.home {
 .home-details p {
   font-size: 20px;
   margin-bottom: 70px;
-  color: var(--text-black-700);
+  color: var(--text-black-900);
 }
 .home-details p::after {
   content: "";
@@ -129,7 +129,7 @@ section.home {
 .home-img .avatar {
   height: 200px;
   margin: auto;
-  border-radius: 5px;
+  border-radius: 50%;
   filter: grayscale();
   animation-name: bounceIn;
   animation-duration: 2s;

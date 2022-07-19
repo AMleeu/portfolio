@@ -20,8 +20,10 @@ export default {
     placed in content-section
 */
 section {
-  background: var(--bg-black-900);
+  background-image: url('../assets/img/bg.jpg') ;
+  background-repeat: repeat;
   min-height: 100vh;
+  background-color: var(--bg-black-900);
   display: block;
   margin-left: 0px !important;
   z-index: 0;

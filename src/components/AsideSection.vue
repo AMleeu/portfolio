@@ -102,7 +102,7 @@ export default {
 <style>
 .aside-section {
   width: 270px;
-  background: var(--bg-black-100);
+  background: var(--bg-black-900);
   padding: 30px;
   position: fixed;
   top: 0;

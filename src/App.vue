@@ -1,20 +1,23 @@
 <template>
   <div id="app">
     <MainContainer v-if="shutdownVal == false" @shutdown="shutdown" />
+    <ShutDown v-else /> 
   </div>
 </template>
 
 <script>
 import MainContainer from "./components/MainContainer.vue"
+import ShutDown from "./components/ShutDown.vue"
 
 export default {
   name: "App",
   components:{
-    MainContainer
+    MainContainer,
+    ShutDown
   },
   data(){
     return{
-      shutdownVal:false
+      shutdownVal:true
     }
   },
   methods:{
