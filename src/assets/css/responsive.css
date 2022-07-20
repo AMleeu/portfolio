@@ -63,7 +63,7 @@
 /*=======================
   viewport height
 ==========================*/
-@media (max-height: 883px) {
+@media (max-height: 896px) and (max-width: 508px) {
   .home-details p{
     margin-bottom:30px !important;
   }
@@ -93,7 +93,7 @@
     animation-iteration-count: infinite !important;
   }
 }
-@media (max-height: 518px) {
+@media (max-height: 518px) and (max-width: 508px) {
   .home-details .profession{
     font-size:7.5vh !important;
   }
@@ -104,7 +104,7 @@
     font-size:4vh !important;
   }
 }
-@media (max-height: 450px) {
+@media (max-height: 450px) and (max-width: 508px) {
   .home-details p{
     font-size:3.8vh !important;
   }

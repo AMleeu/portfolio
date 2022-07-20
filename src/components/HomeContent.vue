@@ -9,7 +9,7 @@
             I build ambitious User Interfaces with peices of
             <span ref="typedWords"></span>
           </p>
-          <a href="#contact" class="btn">
+          <a :href="`${publicPath}resume.pdf`" class="btn" download>
             <font-awesome-icon icon="fa-solid fa-file-download" />
             resume
           </a>
@@ -36,6 +36,7 @@ export default {
   data() {
     return {
       avatarUrl,
+      publicPath: process.env.BASE_URL,
       /*
         for typing effect
       */
