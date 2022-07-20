@@ -113,13 +113,13 @@
     top:20px !important;
   }
   .aside-section #logo a{
-    font-size:1.8vh !important;
+    font-size:3.8vh !important;
   }
   .aside-section #logo span{
-    font-size:1.9vh !important;
+    font-size:4.1vh !important;
   }
   .aside-section .nav li a{
-    font-size:1vh !important;
+    font-size:2.5vh !important;
   }
 }
 @media (max-height: 450px) and (max-width: 660px) {
