@@ -103,11 +103,6 @@
   .home-details p{
     font-size:4vh !important;
   }
-}
-@media (max-height: 450px) and (max-width: 508px) {
-  .home-details p{
-    font-size:3.8vh !important;
-  }
   .aside-section{
     padding-top:5% !important;
   }
@@ -120,8 +115,12 @@
   .aside-section #logo span{
     font-size:10vh !important;
   }
-  .aside-section .nav li a,
-  .home-details p{
+  .aside-section .nav li a{
     font-size:5.5vh !important;
+  }
+}
+@media (max-height: 450px) and (max-width: 508px) {
+  .home-details p{
+    font-size:3.8vh !important;
   }
 }
