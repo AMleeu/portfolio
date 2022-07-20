@@ -54,7 +54,7 @@
 }
 @media (max-width: 508px) {
   .fixed-icon-container {
-    left: calc(100vw - 5px) !important;
+    left: calc(100vw - 45px) !important;
   }
   .home-img{
     flex: 0 0 50% !important;
