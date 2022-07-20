@@ -53,6 +53,9 @@
   }
 }
 @media (max-width: 508px) {
+  .fixed-icon-container {
+    left: calc(100vw - 5px) !important;
+  }
   .home-img{
     flex: 0 0 50% !important;
   }
@@ -121,6 +124,15 @@
 }
 @media (max-height: 450px) and (max-width: 660px) {
   .home-details p{
+    font-size:3.8vh !important;
+  }
+  .aside-section #logo a{
+    font-size:5.5vh !important;
+  }
+  .aside-section #logo span{
+    font-size:6.1vh !important;
+  }
+  .aside-section .nav li a{
     font-size:3.8vh !important;
   }
 }
