@@ -4,10 +4,11 @@
       <div class="row">
         <div class="home-details">
           <h3 class="greeting">Hi, i am <span>Albert</span></h3>
-          <h3 class="profession">
-            I am a <span>Front-End Developer</span>
-          </h3>
-          <p ref="typeP"></p>
+          <h3 class="profession">I am a <span>Front-End Developer</span></h3>
+          <p>
+            I build ambitious User Interfaces with peices of
+            <span ref="typedWords"></span>
+          </p>
           <a href="#contact" class="btn">
             <font-awesome-icon icon="fa-solid fa-file-download" />
             resume
@@ -35,26 +36,63 @@ export default {
   data() {
     return {
       avatarUrl,
-      pText: "I build ambitious User Interfaces with modular pieces of logic.",
+      /*
+        for typing effect
+      */
+      words: ["modular code.", "reusable logic.", "composable units."],
+      wordIndex: 0,
       charIndex: 0,
+      typeSpeed: 200,
+      eraseSpeed: 100,
+      betweenWords: 500,
     };
   },
   methods: {
     type() {
-      if (this.charIndex < this.pText.length) {
-        this.$refs.typeP.innerHTML += this.pText[this.charIndex];
-        this.charIndex++; 
-        setTimeout(this.type, 100)
-      }else{
-        this.charIndex
+      /*
+        if we're still not at the end of the current word
+          - continue updating span.typedWords innerHTML with it's characters
+          - increment this.charIndex at each iteration
+        else
+          - invoke this.erase() to erase the current word from span.typedWords innerHTML 
+      */
+      if (this.charIndex < this.words[this.wordIndex].length) {
+        this.$refs.typedWords.innerHTML += this.words[this.wordIndex].charAt(this.charIndex);
+        this.charIndex++;
+        setTimeout(this.type, this.typeSpeed);
+      } else {
+        setTimeout(this.erase, this.betweenWords);
+      }
+    },
+    erase() {
+      /*
+        if we srill havent erased all the charaters of the current words
+          - continueremoving them from span.typedWords innerHTML 
+          - decrement this.charIndex at each iteration
+        else
+          - move on to the next word
+            if we're at the end of this.words 
+              - reset this.wordIndex to 0
+          - invoke this.type() to type the next word as per the current value of this.wordIndex   
+      */
+      if (this.charIndex > 0) {
+        this.$refs.typedWords.innerHTML = this.words[this.wordIndex].substring(
+          0,
+          this.charIndex - 1
+        );
+        this.charIndex--;
+        setTimeout(this.erase, this.eraseSpeed);
+      } else {
+        this.wordIndex++;
+        if (this.wordIndex == this.words.length) {
+          this.wordIndex = 0;
+        }
+        setTimeout(this.type, this.typeSpeed);
       }
     },
   },
   mounted() {
-    /*
-      delay typing effect only after animation has finished
-    */
-    setInterval(this.type, 2000);
+    setTimeout(this.type, this.betweenWords);
   },
 };
 </script>
