@@ -6,12 +6,14 @@
         @shutdown="shutdown"
         :content="content"
       />
-    <div class="fixed-icon-container" @click="toggleHideAside">
+    <div :class="['fixed-icon-container', this.innerWidth <= 508 ? 'w-508':'']" @click="toggleHideAside">
       <font-awesome-icon
         icon="fa-solid fa-chevron-circle-left"
         id="close-aside"
         v-show="!hideAside"
       />
+    </div>
+    <div class="fixed-icon-container" @click="toggleHideAside">
       <font-awesome-icon
         icon="fa-solid fa-chevron-circle-right"
         id="open-aside"
@@ -114,6 +116,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: left 0.25s ease-in;
   animation-name: tada;
   animation-duration: 1s;
   animation-delay: 12s;

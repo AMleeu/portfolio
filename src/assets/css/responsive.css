@@ -53,8 +53,9 @@
   }
 }
 @media (max-width: 508px) {
-  .fixed-icon-container {
-    left: calc(100vw - 65px) !important;
+  .fixed-icon-container.w-508{
+    position: absolute;
+    left: calc(15px) !important;
   }
   .home-img{
     flex: 0 0 50% !important;
