@@ -48,6 +48,11 @@ export default {
     return {
       hideAside: false,
       innerWidth: 2000,
+      /*
+        will be used to diferrentiate when componened is rendered
+        onload or when user clicks shutdown
+      */
+      isShuttingDown:false,
       content: "home",
     };
   },
@@ -67,10 +72,13 @@ export default {
       this.hideAside = true;
     },
     /*
-      bubble the emitted event from AsideSection through to App
+      pass along a value of true to the emited shutdown event 
+      such that the parent component rendering it can 
+      differentiate when it is rendered onload or when user clcks
+      shutdown 
     */
     shutdown(){
-      this.$emit('shutdown');
+      this.$emit('shutdown', 'user');
       this.$destroy();
     }
   },

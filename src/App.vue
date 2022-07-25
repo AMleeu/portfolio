@@ -6,7 +6,7 @@
       component is conditionally rendered
     -->
     <MainContainer v-if="shutdownVal == false" @shutdown="shutdown" />
-    <ShutDown v-else-if="shutdownVal" @switchOn="switchOn"/> 
+    <ShutDown v-else-if="shutdownVal" @switchOn="switchOn" :shutDownCausedBy="shutDownCausedBy"/> 
   </div>
 </template>
 
@@ -22,11 +22,13 @@ export default {
   },
   data(){
     return{
-      shutdownVal:true
+      shutdownVal:true,
+      shutDownCausedBy: "initial load"
     }
   },
   methods:{
-    shutdown(){
+    shutdown(shutDownCausedBy){
+      this.shutDownCausedBy = shutDownCausedBy;
       this.shutdownVal = true;
     },
     switchOn(){

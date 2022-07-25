@@ -1,6 +1,6 @@
 <template>
   <div class="shutdown-container">
-    <h1 ref="heading">please wait</h1>
+    <h1 ref="heading">{{ shutDownMsg }}</h1>
     <div class="shutdown-clock">
       <span ref="seconds" v-show="timeLeft > 0">
       </span>
@@ -20,6 +20,9 @@ import { faPowerOff } from "@fortawesome/free-solid-svg-icons";
 library.add(faPowerOff);
 export default {
   emits: ["switchOn"],
+  props:{
+    shutDownCausedBy:String
+  },
   data() {
     return {
       timeLeft: 6,
@@ -40,6 +43,15 @@ export default {
         }, 500);
       }
     },
+  },
+  computed:{
+    shutDownMsg(){
+      if(this.shutDownCausedBy == "user"){
+        return "shutting down";
+      }else{
+        return "loading"; 
+      }
+    }
   },
   methods: {
     countDown() {
