@@ -18,6 +18,9 @@
   .fixed-icon-container {
     left: calc(100vw - 65px) !important;
   }
+  .aside-section #logo{
+    margin-top: 30px !important;
+   }
   .home-img {
     flex: 0 0 30%;
     max-width: 180px !important;
@@ -53,6 +56,29 @@
   }
 }
 @media (max-width: 508px) {
+  .aside-section{
+    width:100vw !important;
+    border-right: 0px !important;
+    background-image: url("../img/bg_dark.jpg") !important;
+    background-repeat: repeat;   
+  }
+  .aside-section #logo a{
+    color: var(--bg-black-100) !important;;
+  }
+  .aside-section #logo span {
+    color: var(--bg-black-900) !important;;
+  }
+  .aside-section .nav li a{
+    color:var(--bg-black-100) !important;;
+  }
+  .aside-section .nav a.active, 
+  .aside-section .nav li a.active:hover,
+  .aside-section .nav li a.active:focus
+  {
+    color: var(--primary) !important;
+    font-weight: normal !important;
+    text-transform: uppercase;
+  }
   .fixed-icon-container.w-508{
     position: absolute;
     left: calc(15px) !important;

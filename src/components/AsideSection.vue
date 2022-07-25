@@ -110,7 +110,7 @@ export default {
   height: 100%;
   z-index: 10;
   display: flex;
-  justify-content: center;
+  justify-content: center; 
   align-items: center;
   border-right: 1px solid var(--bg-black-50);
   transition: all 0.25s ease-in;
