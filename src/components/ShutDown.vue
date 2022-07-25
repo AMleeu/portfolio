@@ -47,9 +47,9 @@ export default {
   computed:{
     shutDownMsg(){
       if(this.shutDownCausedBy == "user"){
-        return "shutting down";
+        return "good bye";
       }else{
-        return "loading"; 
+        return "hello"; 
       }
     }
   },
