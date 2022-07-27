@@ -152,8 +152,19 @@
   }
 }
 @media (max-height: 450px) and (max-width: 660px) {
+  .home-details .profession{
+    font-size:3.5vh !important;
+  }
+  .home-details .greeting{
+    font-size:4vh !important;
+  }
   .home-details p{
-    font-size:3.8vh !important;
+    font-size:2.5vh !important;
+  }
+  .btn {
+    font-size: 12px !important;
+    font-weight:400 !important;
+    padding: 8.4px 24.5px !important;
   }
   .aside-section #logo {
     top:20px !important;
