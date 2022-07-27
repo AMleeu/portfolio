@@ -26,19 +26,25 @@ export default {
   data() {
     return {
       timeLeft: 6,
+      /*
+        for storing Timeout IDs
+        so they can be cleared whe component is detroyed
+      */
+     timeOutID_heading:null,
+     timeOutID_seconds:null,
     };
   },
   watch: {
     /*
         keep track on changes to this.timeLeft 
         if == 0
-          what for a 0.25 seconds (so the 0 can display) 
+          what for a 0.5 seconds (so the 0 can display) 
           & then 
             change the h1 inner HTML to 'switch on'
       */
     timeLeft(val) {
       if (val == 0) {
-        setInterval(() => {
+        this.timeOutID_heading = setTimeout(() => {
           this.$refs.heading.innerHTML = "switch on";
         }, 500);
       }
@@ -60,7 +66,7 @@ export default {
       }
       if (this.timeLeft > 0) {
         this.$refs.seconds.innerHTML = this.timeLeft.toString();
-        setTimeout(this.countDown, 1000);
+        this.timeOutID_seconds = setTimeout(this.countDown, 1000);
       }
     },
     switchOn() {
@@ -75,6 +81,13 @@ export default {
     this.timeLeft = 6;
     this.countDown();
   },
+  beforeDestroy(){
+      /*
+        clear timeouts when component is unmounted
+      */
+      clearTimeout(this.timeOutID_heading);
+      clearTimeout(this.timeOutID_seconds);
+  }
 };
 </script>
 <style>

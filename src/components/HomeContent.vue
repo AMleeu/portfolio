@@ -46,6 +46,15 @@ export default {
       typeSpeed: 200,
       eraseSpeed: 100,
       betweenWords: 500,
+      /*
+        for storing Timeout IDs
+        so they can be cleared whe component is detroyed
+      */
+      timeOutID_type1: null,
+      timeOutID_type2: null,
+      timeOutID_type3: null,
+      timeOutID_erase1: null,
+      timeOutID_erase2: null,
     };
   },
   methods: {
@@ -58,11 +67,13 @@ export default {
           - invoke this.erase() to erase the current word from span.typedWords innerHTML 
       */
       if (this.charIndex < this.words[this.wordIndex].length) {
-        this.$refs.typedWords.innerHTML += this.words[this.wordIndex].charAt(this.charIndex);
+        this.$refs.typedWords.innerHTML += this.words[this.wordIndex].charAt(
+          this.charIndex
+        );
         this.charIndex++;
-        setTimeout(this.type, this.typeSpeed);
+        this.timeOutID_type1 = setTimeout(this.type, this.typeSpeed);
       } else {
-        setTimeout(this.erase, this.betweenWords);
+        this.timeOutID_erase1 = setTimeout(this.erase, this.betweenWords);
       }
     },
     erase() {
@@ -82,18 +93,28 @@ export default {
           this.charIndex - 1
         );
         this.charIndex--;
-        setTimeout(this.erase, this.eraseSpeed);
+        this.timeOutID_erase2 = setTimeout(this.erase, this.eraseSpeed);
       } else {
         this.wordIndex++;
         if (this.wordIndex == this.words.length) {
           this.wordIndex = 0;
         }
-        setTimeout(this.type, this.typeSpeed);
+        this.timeOutID_type2 = setTimeout(this.type, this.typeSpeed);
       }
     },
   },
   mounted() {
-    setTimeout(this.type, this.betweenWords);
+    this.timeOutID_type3 = setTimeout(this.type, this.betweenWords);
+  },
+  beforeDestroy() {
+    /*
+      clear timeouts before component is unmounted
+    */
+    clearTimeout(this.timeOutID_type1);
+    clearTimeout(this.timeOutID_type2);
+    clearTimeout(this.timeOutID_type3);
+    clearTimeout(this.timeOutID_erase1);
+    clearTimeout(this.timeOutID_erase2);
   },
 };
 </script>
