@@ -9,7 +9,7 @@
             I build ambitious User Interfaces with peices of
             <span ref="typedWords"></span>
           </p>
-          <a :href="`${publicPath}resume.pdf`" class="btn" download>
+          <a :href="`${publicPath}CV.pdf`" class="btn" download>
             <font-awesome-icon icon="fa-solid fa-file-download" />
             download CV
           </a>
