@@ -81,7 +81,7 @@ export default {
     this.timeLeft = 6;
     this.countDown();
   },
-  beforeDestroy(){
+  destroyed(){
       /*
         clear timeouts when component is unmounted
       */

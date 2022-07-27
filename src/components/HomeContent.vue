@@ -106,7 +106,7 @@ export default {
   mounted() {
     this.timeOutID_type3 = setTimeout(this.type, this.betweenWords);
   },
-  beforeDestroy() {
+  destroyed() {
     /*
       clear timeouts before component is unmounted
     */
