@@ -60,7 +60,8 @@
     width:100vw !important;
     border-right: 0px !important;
     background-image: url("../img/bg_dark.jpg") !important;
-    background-repeat: repeat;   
+    background-repeat: repeat;  
+    background-color: none !important; 
   }
   .aside-section #logo a{
     color: var(--bg-black-100) !important;;
@@ -77,6 +78,7 @@
   {
     color: var(--primary) !important;
     font-weight: normal !important;
+    color:var(--accent) !important;
     text-transform: uppercase;
   }
   .fixed-icon-container.w-508{
