@@ -51,13 +51,13 @@ section .content-container .row {
     this is the global styling for it
 */
 .btn {
-  font-size: 16px;
+  font-size: 15px;
   font-weight:600;
   padding: 12px 35px;
   background: var(--primary);
   color: #fff;
   letter-spacing: 1.12px;
-  font-weight: 600;
+  font-weight: 500;
   border-radius: 40px;
   display: inline-block;
   white-space: nowrap;
@@ -74,5 +74,6 @@ section .content-container .row {
 .btn:hover {
   transform: scale(1.05);
   box-shadow: none;
+  font-weight: 600;
 }
 </style>

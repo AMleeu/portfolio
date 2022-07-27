@@ -11,7 +11,7 @@
           </p>
           <a :href="`${publicPath}resume.pdf`" class="btn" download>
             <font-awesome-icon icon="fa-solid fa-file-download" />
-            resume
+            download CV
           </a>
         </div>
         <div class="home-img">
