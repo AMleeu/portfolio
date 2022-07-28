@@ -92,19 +92,19 @@
     border-top:0px !important;
   }
   .home-details .profession{
-    font-size:3.5vh !important;
+    font-size:3.2vh !important;
   }
   .home-details .greeting{
-    font-size:4vh !important;
+    font-size:2.8vh !important;
   }
   .home-details p{
     font-size:2.5vh !important;
   }
   .btn {
-    font-size: 12px !important;
+    font-size: 14px !important;
     font-weight:400 !important;
     margin-bottom:10px !important;
-    padding: 8.4px 24.5px !important;
+    padding: 8.82px 25.725px !important;
   }
 }
 /*=======================
