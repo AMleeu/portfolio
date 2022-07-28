@@ -56,6 +56,9 @@
   }
 }
 @media (max-width: 508px) {
+  .fixed-icon-container .svg-inline--fa#close-aside {
+    background: var(--primary) !important;
+  }
   .aside-section{
     width:100vw !important;
     border-right: 0px !important;

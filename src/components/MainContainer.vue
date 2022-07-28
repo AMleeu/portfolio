@@ -15,7 +15,7 @@
     </div>
     <div class="fixed-icon-container" @click="toggleHideAside">
       <font-awesome-icon
-        icon="fa-solid fa-chevron-circle-right"
+        icon="fa-solid fa-bars-staggered"
         id="open-aside"
         v-show="hideAside"
       />
@@ -33,10 +33,10 @@ import ContentSection from "./ContentSection.vue";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faChevronCircleLeft,
-  faChevronCircleRight,
+  faBarsStaggered,
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faChevronCircleLeft, faChevronCircleRight);
+library.add(faChevronCircleLeft, faBarsStaggered);
 
 export default {
   emits:['shutdown'],
@@ -49,7 +49,7 @@ export default {
       hideAside: false,
       innerWidth: 2000,
       /*
-        will be used to diferrentiate when componened is rendered
+        will be used to diferrentiate when component is rendered
         onload or when user clicks shutdown
       */
       isShuttingDown:false,
@@ -134,8 +134,8 @@ export default {
 }
 .fixed-icon-container .svg-inline--fa {
   font-size: 35px;
-  background: var(--text-black-700);
-  color: var(--bg-black-900);
+  background: var(--bg-black-700);
+  color: var(--text-black-700);
   border-radius: 50%;
   transition: all 0.25s ease-in;
 }
@@ -144,4 +144,13 @@ export default {
   opacity: 0.75;
   box-shadow: 3px 3px 5px 0px rgb(0 0 0 / 20%);
 }
+.fixed-icon-container .svg-inline--fa#open-aside{
+  font-size: 25px;
+  color: var(--bg-black-700);
+}
+.fixed-icon-container .svg-inline--fa#open-aside:hover{
+ color:var(--primary); 
+ background: var(--bg-black-700);
+}
+
 </style>
