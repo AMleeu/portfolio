@@ -107,7 +107,7 @@ export default {
   font-weight: 600;
   text-transform: lowercase;
   padding: 20px;
-  background: var(--bg-black-100);
+  background: var(--bg-black-900);
   color: var(--text-black-900);
   transform: skewY(-10deg);
   box-shadow: 10px 10px 20px rgb(0 0 0 / 0.3);
