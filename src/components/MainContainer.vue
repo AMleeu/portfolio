@@ -6,7 +6,11 @@
         @shutdown="shutdown"
         :content="content"
       />
-    <div :class="['fixed-icon-container', this.innerWidth <= 508 ? 'w-508':'']" @click="toggleHideAside">
+    <!--
+      if veiwport width <= 508px
+        add a class of .w-508 to the #close-aside icon 
+    -->
+    <div :class="['fixed-icon-container', innerWidth <= 508 ? 'w-508':'']" @click="toggleHideAside">
       <font-awesome-icon
         icon="fa-solid fa-chevron-circle-left"
         id="close-aside"
