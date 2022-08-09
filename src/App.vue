@@ -74,4 +74,7 @@ body {
 a{
   text-decoration: none !important;
 }
+h3{
+  font-weight:800 !important;
+}
 </style>
