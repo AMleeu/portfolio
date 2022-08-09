@@ -1,5 +1,6 @@
 import Vue from "vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import "./assets/css/bootstrap.min.css";
 import "./assets/css/responsive.css";
 import App from "./App";
 import "animate.css";

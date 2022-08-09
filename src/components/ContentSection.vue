@@ -29,7 +29,7 @@ section {
   z-index: 0;
 }
 /*
-    each content placed in section will have a div.content-container
+    each content component placed in section will have a div.content-container
     this is the global styling for it
 */
 section .content-container {
@@ -38,10 +38,10 @@ section .content-container {
   margin: auto;
 }
 /*
-    every content placed in section will have a div.row 
+    every content component placed in section will have a di.content-row 
     this is the global styling for it
 */
-section .content-container .row {
+section .content-container .content-row {
   display: flex;
   flex-wrap: wrap;
   position: relative;

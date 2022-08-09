@@ -22,7 +22,7 @@ export default {
   },
   data(){
     return{
-      shutdownVal:true,
+      shutdownVal:false,
       shutDownCausedBy: "initial load"
     }
   },
@@ -70,5 +70,8 @@ body {
 ::before,
 ::after {
   box-sizing: border-box;
+}
+a{
+  text-decoration: none !important;
 }
 </style>

@@ -3,7 +3,7 @@
     <div id="logo">
       <a href="#"><span>A</span>lbert</a>
     </div>
-    <ul class="nav">
+    <ul class="aside-nav">
       <li>
         <a
           href="#"
@@ -170,7 +170,7 @@ logo
 /*=================================
 nav
 ==================================*/
-.aside-section .nav {
+.aside-section .aside-nav {
   list-style: none;
   margin-top: 50px;
   animation-name: bounceInUp;
@@ -179,11 +179,11 @@ nav
   animation-timing-function: ease-out;
   animation-fill-mode: initial;
 }
-.aside-section .nav li {
+.aside-section .aside-nav li {
   margin-top: var(--text-margin-top);
   display: block;
 }
-.aside-section .nav li a {
+.aside-section .aside-nav li a {
   font-size: 20px;
   font-weight: 600;
   display: block;
@@ -191,15 +191,15 @@ nav
   color: var(--text-black-900);
   padding: 5px 15px;
 }
-.aside-section .nav li a:hover,
-.aside-section .nav li a:focus {
+.aside-section .aside-nav li a:hover,
+.aside-section .aside-nav li a:focus {
   color: var(--bg-black-50);
 }
-.aside-section .nav a.active {
+.aside-section .aside-nav a.active {
   color: var(--primary);
 }
-.aside-section .nav li a.active:hover,
-.aside-section .nav li a.active:focus {
+.aside-section .aside-nav li a.active:hover,
+.aside-section .aside-nav li a.active:focus {
   color: var(--primary);
   cursor: default;
 }

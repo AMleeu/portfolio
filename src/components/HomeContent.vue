@@ -1,7 +1,7 @@
 <template>
   <section class="home">
     <div class="content-container">
-      <div class="row">
+      <div class="content-row">
         <div class="home-details">
           <h3 class="greeting">Hi, i am <span>Albert</span></h3>
           <h3 class="profession">I am a <span>Front-End Developer</span></h3>
