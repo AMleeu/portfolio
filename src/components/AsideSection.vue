@@ -185,23 +185,45 @@ nav
 }
 .aside-section .aside-nav li a {
   font-size: 20px;
-  font-weight: 600;
-  display: block;
-  border-bottom: 1px solid var(--bg-black-50);
+  width:auto;
+  font-weight: 400;
   color: var(--text-black-900);
   padding: 5px 15px;
 }
+.aside-section .aside-nav li a::after{
+  content: "";
+  width:0%;
+  height: 2px;
+  background-color: var(--primary);
+  position:absolute;
+  left:0;
+  margin-top:30px;
+  margin-left:160px;
+  transition: all 0.4s ease-out;
+}
 .aside-section .aside-nav li a:hover,
-.aside-section .aside-nav li a:focus {
-  color: var(--bg-black-50);
+.aside-section .aside-nav li a:focus{
+  color:var(--bg-black-50);
+}
+.aside-section .aside-nav li a:hover::after,
+.aside-section .aside-nav li a:focus::after{
+  width:20%;
+  margin-left:160px;
 }
 .aside-section .aside-nav a.active {
   color: var(--primary);
+}
+.aside-section .aside-nav a.active::after{
+  width:10%;
 }
 .aside-section .aside-nav li a.active:hover,
 .aside-section .aside-nav li a.active:focus {
   color: var(--primary);
   cursor: default;
+}
+.aside-section .aside-nav li a.active:hover::after,
+.aside-section .aside-nav li a.active:focus::after {
+  width:10%;
 }
 /*
   give each icon a standard width
