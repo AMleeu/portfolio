@@ -1,25 +1,21 @@
 <template>
-  <section class="home">
-    <div class="content-container">
-      <div class="content-row">
-        <div class="home-details">
-          <h3 class="greeting">Hi, i am <span>Albert</span></h3>
-          <h3 class="profession">I am a <span>Front-End Developer</span></h3>
-          <p>
-            I build ambitious User Interfaces with peices of
-            <span ref="typedWords"></span>
-          </p>
-          <a :href="`${publicPath}CV.pdf`" class="btn" download>
-            <font-awesome-icon icon="fa-solid fa-file-download" />
-            download CV
-          </a>
-        </div>
-        <div class="home-img">
-          <img :src="avatarUrl" alt="" class="avatar" />
-        </div>
-      </div>
+  <div class="content-row">
+    <div class="home-details">
+      <h3 class="greeting">Hi, i am <span>Albert</span></h3>
+      <h3 class="profession">I am a <span>Front-End Developer</span></h3>
+      <p>
+        I build ambitious User Interfaces with peices of
+        <span ref="typedWords"></span>
+      </p>
+      <a :href="`${publicPath}CV.pdf`" class="btn" download>
+        <font-awesome-icon icon="fa-solid fa-file-download" />
+        download CV
+      </a>
     </div>
-  </section>
+    <div class="home-img">
+      <img :src="avatarUrl" alt="" class="avatar" />
+    </div>
+  </div>
 </template>
 
 <script>
@@ -120,7 +116,7 @@ export default {
 </script>
 
 <style>
-section.home {
+#content-section section{
   min-height: 100vh;
   display: flex;
   color: var(--text-black-700);

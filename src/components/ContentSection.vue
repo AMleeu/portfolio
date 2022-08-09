@@ -1,6 +1,10 @@
 <template>
   <div id="content-section">
-    <HomeContent />
+    <section>
+      <div class="content-container">
+        <HomeContent />
+      </div>
+    </section>
   </div>
 </template>
 
@@ -10,7 +14,7 @@ import HomeContent from "./HomeContent.vue";
 export default {
   components: {
     HomeContent,
-  }
+  },
 };
 </script>
 
@@ -20,7 +24,7 @@ export default {
     placed in content-section
 */
 section {
-  background-image: url('../assets/img/bg.jpg') ;
+  background-image: url("../assets/img/bg.jpg");
   background-repeat: repeat;
   min-height: 100vh;
   background-color: var(--bg-black-900);
@@ -52,7 +56,7 @@ section .content-container .content-row {
 */
 .btn {
   font-size: 15px;
-  font-weight:600;
+  font-weight: 600;
   padding: 12px 35px;
   background: var(--primary);
   color: #fff;
