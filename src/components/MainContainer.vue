@@ -24,7 +24,7 @@
         v-show="hideAside"
       />
     </div>
-    <ContentSection v-if="content == 'home' || content == 'email me'" />
+    <ContentSection :content="content" />
   </div>
 </template>
 <script>
@@ -69,9 +69,10 @@ export default {
         }
     },
     /*
-      use value emitted from AsideSection
+      update this.content using the value emitted from AsideSection
+      when user clicks nav link
     */
-    updateContent(content = "home") {
+    updateContent(content) {
       this.content = content;
       this.hideAside = true;
     },

@@ -2,7 +2,8 @@
   <div id="content-section">
     <section>
       <div class="content-container">
-        <HomeContent />
+        <ServicesContent v-show="content=='services'"/>
+        <HomeContent v-show="content=='home'"/>
       </div>
     </section>
   </div>
@@ -10,10 +11,18 @@
 
 <script>
 import HomeContent from "./HomeContent.vue";
+import ServicesContent  from "./ServicesContent.vue"
 
 export default {
   components: {
     HomeContent,
+    ServicesContent,
+  },
+  props:{
+    content: {
+      type: String,
+      default: "home",
+    },
   },
 };
 </script>
@@ -42,7 +51,7 @@ section .content-container {
   margin: auto;
 }
 /*
-    every content component placed in section will have a di.content-row 
+    every content component placed in section will have a div.content-row 
     this is the global styling for it
 */
 section .content-container .content-row {

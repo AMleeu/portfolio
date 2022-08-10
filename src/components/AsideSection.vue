@@ -16,11 +16,11 @@
       </li>
       <li>
         <a
-          href="mailto:albert.m.leeu@gmail.com"
-          @click="$emit('updateContent', 'home')"
+          href="#"
+          :class="[content == 'services' ? 'active' : '']"
+          @click="$emit('updateContent', 'services')"
         >
-          <font-awesome-icon icon="fa-solid fa-envelope-circle-check" />
-          &nbsp; email me
+          <font-awesome-icon icon="fa-solid fa-user-gear" /> &nbsp; services
         </a>
       </li>
       <li>
@@ -33,15 +33,6 @@
         </a>
       </li>
       <!--
-      <li>
-        <a
-          href="#"
-          :class="[content == 'my services' ? 'active' : '']"
-          @click="$emit('updateContent', 'my services')"
-        >
-          <font-awesome-icon icon="fa-solid fa-user-gear" /> &nbsp; my services
-        </a>
-      </li>
       <li>
         <a
           href="#"
@@ -184,6 +175,7 @@ nav
   display: block;
 }
 .aside-section .aside-nav li a {
+  position:relative;
   font-size: 20px;
   width:auto;
   font-weight: 400;
@@ -198,7 +190,6 @@ nav
   position:absolute;
   left:0;
   margin-top:30px;
-  margin-left:160px;
   transition: all 0.4s ease-out;
 }
 .aside-section .aside-nav li a:hover,
@@ -208,7 +199,7 @@ nav
 .aside-section .aside-nav li a:hover::after,
 .aside-section .aside-nav li a:focus::after{
   width:20%;
-  margin-left:160px;
+  margin-left:80px;
 }
 .aside-section .aside-nav a.active {
   color: var(--primary);
@@ -220,6 +211,7 @@ nav
 .aside-section .aside-nav li a.active:focus {
   color: var(--primary);
   cursor: default;
+  margin-left:none;
 }
 .aside-section .aside-nav li a.active:hover::after,
 .aside-section .aside-nav li a.active:focus::after {
