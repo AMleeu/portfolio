@@ -22,7 +22,7 @@ export default {
   },
   data(){
     return{
-      shutdownVal:false,
+      shutdownVal:true,
       shutDownCausedBy: "initial load"
     }
   },

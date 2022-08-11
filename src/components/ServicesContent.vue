@@ -13,7 +13,7 @@
               <font-awesome-icon icon="fa-solid fa-exchange-alt" />
             </div>
             <h5 class="mt-4 mb-4 text-center">
-              i convert static web pages & designs into scallable web
+              i convert static web pages and designs into scallable web
               applications
             </h5>
             <a href="mailto:albert.m.leeu@gmail.com" class="content-cta mb-4"
@@ -27,7 +27,7 @@
               <font-awesome-icon icon="fa-solid fa-network-wired" />
             </div>
             <h5 class="mt-4 mb-4 text-center">
-              i develop intuitive UIs that consume API data
+              i develop intuitive User Interfaces that consume and present API data in custom ways
             </h5>
             <a href="mailto:albert.m.leeu@gmail.com" class="content-cta mb-4"
               >hire me</a
@@ -40,7 +40,7 @@
               <font-awesome-icon icon="fa-solid fa-code-compare" />
             </div>
             <h5 class="mt-4 mb-4 text-center">
-              i refactor legacy jQuery code to modern JavaScript that uses best
+              i refactor legacy jQuery code to modern JavaScript code that uses best
               practices
             </h5>
             <a href="mailto:albert.m.leeu@gmail.com" class="content-cta mb-4"
@@ -68,23 +68,6 @@ export default {};
 </script>
 
 <style>
-.container {
-  width: 100%;
-}
-.main-heading {
-  position: relative;
-  letter-spacing: 1.75px;
-  color: var(--text-black-700);
-}
-.main-heading::after {
-  content: "";
-  width: 5%;
-  height: 5px;
-  border-top: 5px solid var(--bg-black-50);
-  right: 20px;
-  position: absolute;
-  margin-top: 30px;
-}
 #services h5 {
   line-height: 25px;
 }
@@ -108,6 +91,12 @@ export default {};
   color: var(--bg-black-900);
   border-radius: 50%;
   box-shadow: 3px 3px 5px 0px rgb(0 0 0 / 20%);
+  animation-name: headShake;
+  animation-duration: 1s;
+  animation-delay: 4s;
+  animation-iteration-count: 3;
+  animation-timing-function: ease-in;
+  animation-fill-mode: initial
 }
 .service .content-cta {
   font-weight: 700;
@@ -118,6 +107,11 @@ export default {};
   color: var(--text-black-700);
   letter-spacing: 1.05px;
   margin-top: -5px;
+  animation-name: swing;
+  animation-duration: 2s;
+  animation-delay: 6s;
+  animation-timing-function: ease-in;
+  animation-fill-mode:forwards;
 }
 .service .content-cta::after {
   content: "";
@@ -127,7 +121,7 @@ export default {};
   position: absolute;
   right: 0;
   margin-top: 30px;
-  transition: all 0.4s ease-out;
+  transition: width 0.4s ease-out;
 }
 .service .content-cta:hover,
 .service .content-cta:focus {

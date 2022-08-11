@@ -4,6 +4,7 @@
       <div class="content-container">
         <ServicesContent v-show="content=='services'"/>
         <HomeContent v-show="content=='home'"/>
+        <ProjectsContent v-show="content=='projects'"/>
       </div>
     </section>
   </div>
@@ -12,16 +13,18 @@
 <script>
 import HomeContent from "./HomeContent.vue";
 import ServicesContent  from "./ServicesContent.vue"
+import ProjectsContent from "./ProjectsContent.vue"
 
 export default {
   components: {
     HomeContent,
     ServicesContent,
+    ProjectsContent,
   },
   props:{
     content: {
       type: String,
-      default: "home",
+      default: "projects",
     },
   },
 };
@@ -60,33 +63,33 @@ section .content-container .content-row {
   position: relative;
 }
 /*
-    most content placed in section will have a a.btn 
-    this is the global styling for it
+    most child components share these classes in common 
+    this is the central styling for them
 */
-.btn {
-  font-size: 15px;
-  font-weight: 600;
-  padding: 12px 35px;
-  background: var(--primary);
-  color: #fff;
-  letter-spacing: 1.12px;
-  font-weight: 500;
-  border-radius: 40px;
-  display: inline-block;
-  white-space: nowrap;
-  border: none;
-  box-shadow: 3px 3px 5px 0px rgb(0 0 0 / 20%);
-  transition: all 0.25s ease-in;
-  animation-name: jello;
+.container {
+  width: 100%;
+}
+.main-heading {
+  position: relative;
+  letter-spacing: 1.75px;
+  color: var(--text-black-700);
+  animation-name: fadeInDown;
   animation-duration: 2s;
-  animation-delay: 8s;
-  animation-iteration-count: 3;
-  animation-timing-function: ease-out;
+  animation-timing-function: ease-in;
   animation-fill-mode: initial;
 }
-.btn:hover {
-  transform: scale(1.05);
-  box-shadow: none;
-  font-weight: 600;
+.main-heading::after {
+  content: "";
+  width: 5%;
+  height: 5px;
+  border-top: 5px solid var(--primary);
+  right: 20px;
+  position: absolute;
+  margin-top: 30px;
+  visibility:none;
+  animation-name: zoomInRight;
+  animation-duration: 4s;
+  animation-timing-function: ease-in;
+  animation-fill-mode:forwards;
 }
 </style>

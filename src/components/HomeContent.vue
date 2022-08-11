@@ -195,4 +195,30 @@ export default {
   animation-timing-function: ease-out;
   animation-fill-mode: initial;
 }
+.btn {
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 35px;
+  background: var(--primary);
+  color: #fff;
+  letter-spacing: 1.12px;
+  font-weight: 500;
+  border-radius: 40px;
+  display: inline-block;
+  white-space: nowrap;
+  border: none;
+  box-shadow: 3px 3px 5px 0px rgb(0 0 0 / 20%);
+  transition: all 0.25s ease-in;
+  animation-name: jello;
+  animation-duration: 2s;
+  animation-delay: 8s;
+  animation-iteration-count: 3;
+  animation-timing-function: ease-out;
+  animation-fill-mode: initial;
+}
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: none;
+  font-weight: 600;
+}
 </style>
