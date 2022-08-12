@@ -22,10 +22,7 @@ export default {
     ProjectsContent,
   },
   props:{
-    content: {
-      type: String,
-      default: "projects",
-    },
+    content:String,
   },
 };
 </script>

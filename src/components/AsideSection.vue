@@ -17,6 +17,15 @@
       <li>
         <a
           href="#"
+          :class="[content == 'projects' ? 'active' : '']"
+          @click="$emit('updateContent', 'projects')"
+        >
+          <font-awesome-icon icon="fa-solid fa-box-open" /> &nbsp; projects
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
           :class="[content == 'services' ? 'active' : '']"
           @click="$emit('updateContent', 'services')"
         >
@@ -24,10 +33,7 @@
         </a>
       </li>
       <li>
-        <a
-          href="#"
-          @click="$emit('shutdown')"
-        >
+        <a href="#" @click="$emit('shutdown')">
           <font-awesome-icon icon="fa-solid fa-power-off" />
           &nbsp; shutdown
         </a>
@@ -71,7 +77,15 @@ import {
   faFingerprint,
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faHomeAlt, faPowerOff, faEnvelopeCircleCheck, faUserGear, faFingerprint, faBoxOpen, faBars);
+library.add(
+  faHomeAlt,
+  faPowerOff,
+  faEnvelopeCircleCheck,
+  faUserGear,
+  faFingerprint,
+  faBoxOpen,
+  faBars
+);
 
 export default {
   emits: ["updateContent", "shutdown"],
@@ -101,7 +115,7 @@ export default {
   height: 100%;
   z-index: 10;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   border-right: 1px solid var(--bg-black-50);
   transition: all 0.25s ease-in;
@@ -175,47 +189,47 @@ nav
   display: block;
 }
 .aside-section .aside-nav li a {
-  position:relative;
+  position: relative;
   font-size: 20px;
-  width:auto;
+  width: auto;
   font-weight: 400;
   color: var(--text-black-900);
   padding: 5px 15px;
 }
-.aside-section .aside-nav li a::after{
+.aside-section .aside-nav li a::after {
   content: "";
-  width:0%;
+  width: 0%;
   height: 2px;
   background-color: var(--primary);
-  position:absolute;
-  left:0;
-  margin-top:30px;
+  position: absolute;
+  left: 0;
+  margin-top: 30px;
   transition: all 0.4s ease-out;
 }
 .aside-section .aside-nav li a:hover,
-.aside-section .aside-nav li a:focus{
-  color:var(--bg-black-50);
+.aside-section .aside-nav li a:focus {
+  color: var(--bg-black-50);
 }
 .aside-section .aside-nav li a:hover::after,
-.aside-section .aside-nav li a:focus::after{
-  width:20%;
-  margin-left:80px;
+.aside-section .aside-nav li a:focus::after {
+  width: 20%;
+  margin-left: 80px;
 }
 .aside-section .aside-nav a.active {
   color: var(--primary);
 }
-.aside-section .aside-nav a.active::after{
-  width:10%;
+.aside-section .aside-nav a.active::after {
+  width: 10%;
 }
 .aside-section .aside-nav li a.active:hover,
 .aside-section .aside-nav li a.active:focus {
   color: var(--primary);
   cursor: default;
-  margin-left:none;
+  margin-left: none;
 }
 .aside-section .aside-nav li a.active:hover::after,
 .aside-section .aside-nav li a.active:focus::after {
-  width:10%;
+  width: 10%;
 }
 /*
   give each icon a standard width
