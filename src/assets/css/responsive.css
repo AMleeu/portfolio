@@ -146,6 +146,9 @@
     animation-name:wobble !important;
     animation-iteration-count: infinite !important;
   }
+  .aside-section{
+    min-height:520px !important;
+  }
 }
 @media (max-height: 518px) and (max-width: 660px) {
   .home-details .profession{
@@ -157,6 +160,7 @@
   .home-details p{
     font-size:4vh !important;
   }
+  /*
   .aside-section{
     padding-top:5% !important;
   }
@@ -172,8 +176,10 @@
   .aside-section .aside-nav li a{
     font-size:3.8vh !important;
   }
+  */
 }
 @media (max-height: 450px) and (max-width: 660px) {
+  /*
   .aside-section #logo {
     top:20px !important;
   }
@@ -183,4 +189,5 @@
   .aside-section #logo span{
     font-size:6.1vh !important;
   }
+  */
 }

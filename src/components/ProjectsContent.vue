@@ -151,13 +151,8 @@ export default {
   color: var(--text-black-700) !important;
   font-weight: 600;
 }
-
-.project-card .card-text {
-  color: var(--text-black-900) !important;
-}
-
 .nav-tabs .nav-link.active {
-  background-color: var(--bg-black-900) !important;
+  background-color: var(--bg-black-100) !important;
   color: var(--text-black-700) !important;
 }
 .nav-tabs .nav-link.active:hover {

@@ -89,4 +89,17 @@ section .content-container .content-row {
   animation-timing-function: ease-in;
   animation-fill-mode:forwards;
 }
+
+.project-card {
+  background: var(--bg-black-900) !important;
+  box-shadow: 3px 3px 5px 0px rgb(0 0 0 / 20%);
+  transition: all 0.2s ease-out;
+}
+.project-card:hover {
+  background: var(--bg-black-900);
+  box-shadow: 3px 3px 0 0 var(--bg-black-50);
+}
+.project-card .card-text {
+  color: var(--text-black-900) !important;
+}
 </style>
